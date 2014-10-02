@@ -1,0 +1,4 @@
+redis:
+  image: "dockerfile/redis"
+  ports: 
+    - "6379:6379"
