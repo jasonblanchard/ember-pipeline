@@ -1,0 +1,11 @@
+New post
+<div>
+  <label>Title</label>
+  {{input value=post.title}}
+</div>
+<div>
+  <label>Body</label>
+  {{textarea value=post.body}}
+</div>
+<div>
+  <button {{action 'createPost'}}>Create Post</button>

@@ -1,34 +1,25 @@
 class Api::V1::PostsController < ApplicationController
-  # GET /posts
-  # GET /posts.json
   def index
     @posts = Post.all
 
     render json: @posts, :root => 'posts'
   end
 
-  # GET /posts/1
-  # GET /posts/1.json
   def show
     @post = Post.find(params[:id])
-
     render json: @post
   end
 
-  # POST /posts
-  # POST /posts.json
   def create
-    @post = Post.new(params[:post])
+    @post = Post.new(post_params)
 
     if @post.save
-      render json: @post, status: :created, location: @post
+      render json: @post, status: :created
     else
       render json: @post.errors, status: :unprocessable_entity
     end
   end
 
-  # PATCH/PUT /posts/1
-  # PATCH/PUT /posts/1.json
   def update
     @post = Post.find(params[:id])
 
@@ -39,12 +30,17 @@ class Api::V1::PostsController < ApplicationController
     end
   end
 
-  # DELETE /posts/1
-  # DELETE /posts/1.json
   def destroy
     @post = Post.find(params[:id])
     @post.destroy
 
     head :no_content
   end
+
+  private
+
+  def post_params
+    params.require(:post).permit(:title, :body)
+  end
+
 end
