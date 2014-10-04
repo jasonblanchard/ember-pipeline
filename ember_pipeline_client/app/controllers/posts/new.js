@@ -11,7 +11,7 @@ export default Ember.Controller.extend({
       var self = this;
 
       self.get('post').save().then(function() {
-        self.transitionToRoute('posts.index');
+        self.transitionToRoute('post', self.get('post'));
       });
     }
   }
