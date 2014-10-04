@@ -1,5 +1,7 @@
 <h2>{{title}}</h2>
-<button {{action 'deletePost'}}>Delete</button>
+{{#if session.isAuthenticated}}
+  <button {{action 'deletePost'}}>Delete</button>
+{{/if}}
 <p>{{body}}</p>
 
 {{#link-to 'posts'}}Back to posts{{/link-to}}
