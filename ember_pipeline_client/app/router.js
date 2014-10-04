@@ -7,10 +7,12 @@ var Router = Ember.Router.extend({
 
 Router.map(function() {
   this.route('login');
+  this.route('logout');
   this.resource('posts', function() {
     this.resource('post', {path: '/:post_id'});
     this.route('new', {path: '/new'});
   });
+  this.route('posts/new');
 });
 
 export default Router;

@@ -1,4 +1,8 @@
-class SessionsController << Devise::SessionsController
+class SessionsController < Devise::SessionsController
+
+  include ActionController::MimeResponds
+  include ActionController::ImplicitRender
+
   def create
     respond_to do |format|
       format.html { super }
