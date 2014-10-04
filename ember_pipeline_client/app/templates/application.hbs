@@ -2,11 +2,11 @@
 
 {{#if session.isAuthenticated}}
  <div>
-   AUTHENTICATED
+   {{#link-to 'logout'}}Logout{{/link-to}}
  </div>
 {{else}}
-  <div>
-    NOT AUTHENTICATED
+<div>
+  {{#link-to 'login'}}Login{{/link-to}}
   </div>
 {{/if}}
 
