@@ -21,3 +21,5 @@ gem "active_model_serializers", "~> 0.8.0"
 # gem 'ruby-debug19', :require => 'ruby-debug', :group => :development
 
 gem 'redis'
+
+gem 'devise'
