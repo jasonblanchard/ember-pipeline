@@ -11,6 +11,7 @@ Router.map(function() {
   this.resource('posts', function() {
     this.resource('post', {path: '/:post_id'});
     this.route('new', {path: '/new'});
+    this.route('edit', {path: '/:post_id/edit'});
   });
   this.route('posts/new');
 });

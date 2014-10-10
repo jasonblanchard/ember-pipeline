@@ -1,6 +1,7 @@
 <h2>{{title}}</h2>
 {{#if session.isAuthenticated}}
   <button {{action 'deletePost'}}>Delete</button>
+  {{#link-to 'posts.edit' this}}Edit{{/link-to}}
 {{/if}}
 <p>{{body}}</p>
 
