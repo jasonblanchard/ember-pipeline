@@ -28,7 +28,7 @@ class ApplicationController < ActionController::API
   end
 
   def in_dev
-    Rails.env == :development
+    Rails.env == "development"
   end
 
 end
